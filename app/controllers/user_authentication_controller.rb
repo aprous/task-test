@@ -74,6 +74,10 @@ class UserAuthenticationController < ApplicationController
 
   def destroy
     @current_user.destroy
+
+    #@current_user.tasks.each do |task|
+     # task.destroy
+    #end 
     reset_session
     
     redirect_to("/", { :notice => "User account cancelled" })
