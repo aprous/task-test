@@ -12,8 +12,8 @@ p "#{User.count} users are in the database."
 
 20.times do 
  task = Task.new
- task.body = "Something"
- task.status = "in_progress"
+ task.body = Faker::TvShows::GameOfThrones.quote
+ task.status = ["in_progress", "completed"].sample
  task.user_id = user.id
  task.save 
 end 
